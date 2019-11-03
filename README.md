@@ -5,6 +5,9 @@
 ![copyright](https://img.shields.io/badge/%C2%A9-Taras_Kushnir-blue.svg)
 ![language](https://img.shields.io/badge/language-go-blue.svg)
 
+## About
+
+`servedir` allows you to serve local directory over http with one command.
 
 Go has wonderful builtin web server and file server but there's no easy way to use it except of writing own code. This mini package solves this problem.
 
