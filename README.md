@@ -4,7 +4,7 @@ Go has wonderful builtin web server and file server but there's no easy way to u
 
 ## Install
 
-`go get github.com/ribtoks/servedir`
+`go get -u github.com/ribtoks/servedir`
 
 ## Usage
 
