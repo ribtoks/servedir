@@ -53,7 +53,16 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Listening at http://localhost:%d", *portFlag)
-	http.Handle("/", GetFileSystemHandler(*dirPathFlag, *rootFlag))
+	root := *rootFlag
+	if !strings.HasPrefix(root, "/") {
+		root = "/" + root
+	}
+
+	if !strings.HasSuffix(root, "/") {
+		root = root + "/"
+	}
+
+	fmt.Printf("Listening at http://localhost:%d%s\n", *portFlag, root)
+	http.Handle("/", GetFileSystemHandler(*dirPathFlag, root))
 	http.ListenAndServe(fmt.Sprintf(":%d", *portFlag), nil)
 }
