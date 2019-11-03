@@ -17,8 +17,6 @@ Go has wonderful builtin web server and file server but there's no easy way to u
 
 ## Usage
 
-Just `servedir` will serve local directory on localhost on port `8080`. Other options:
-
     Usage of servedir:
       -d string
         	Path to directory to serve (default "./")
@@ -26,3 +24,13 @@ Just `servedir` will serve local directory on localhost on port `8080`. Other op
         	Port to use (default 8080)
       -r string
         	Http path to serve (default "/")
+
+## Examples
+
+Serve current directory on `http://locahost:8080/`:
+
+    servedir
+    
+Serve directory `~/Photos/2019-11-03/` with path `photos` on port `1313` (`http://locahost:1313/photos/`):
+
+    servedir -d ~/Photos/2019-11-03 -p 1313 -r photos
